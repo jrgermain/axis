@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import CreatePage from './components/CreatePage';
 import ErrorPage from './components/ErrorPage';
@@ -16,8 +16,11 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route path="/" component={HomePage} exact />
-          <Route path="/create/define-axes" component={CreatePage} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/create">
+            <Redirect to="/create/define-axes" />
+          </Route>
+          <Route path="/create/" component={CreatePage} />
           <Route path="/quiz" component={QuizPage} />
           <Route component={ErrorPage} />
         </Switch>

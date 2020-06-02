@@ -49,7 +49,7 @@ class DefineAxes extends React.Component {
                     <Compass xScore="80" yScore="40" leftAxisLabel={this.state.leftAxisLabel} rightAxisLabel={this.state.rightAxisLabel} topAxisLabel={this.state.topAxisLabel} bottomAxisLabel={this.state.bottomAxisLabel} />
                 </span>
                 <div className="continue">
-                    <LinkButton url="/create/step2" label="Continue"></LinkButton>
+                    <LinkButton url="/create/write-questions" label="Continue"></LinkButton>
                 </div>
             </div>
         )
