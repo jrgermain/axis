@@ -130,6 +130,45 @@ button.stylish.big {
   background-color: var(--accent);
 }
 
+.compass label {
+  position: absolute;
+  font-size: .8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.compass .label-left {
+  left: 0;
+  top: calc(50% - 1rem);
+  width: auto;
+  max-width: 50%;
+}
+.compass .label-right {
+  text-align: right;
+  right: 0;
+  top: calc(50% - 1rem);
+  width: auto;
+  width: 50%;
+}
+.compass .label-top {
+  text-align: center;
+  top: -1rem;
+  left:0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  width: 100%;
+}
+.compass .label-bottom {
+  text-align: center;
+  bottom: -1rem;
+  left:0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  width: 100%;
+}
+
 @keyframes grow-y {
   from {height: 0}
   to   {height: 100%}
@@ -147,16 +186,12 @@ button.stylish.big {
   100% {background-color: var(--accent); width: .5rem; height: .5rem;}
 }
 
-.quiz-builder, .quiz-in-progress {
+.quiz-builder {
   width: 80vw;
   background: white;
   border-radius: 6px;
   padding: 1rem;
   margin-bottom: 1rem;
-}
-
-.quiz-in-progress {
-  height: 80vw;
 }
 
 p,
@@ -181,11 +216,22 @@ header a {
   grid-template-columns: 50%;
 }
 
-.define-axes .intro {
+.define-axes .intro,
+.define-axes .preview-label {
   grid-column: 1 / span 2;
   border-bottom: 1px dashed #ddd;
   margin-bottom: 1rem;
 }
+
+.define-axes hr {
+  grid-column: 1 / span 2;
+  /* border-color: var(--light); */
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  visibility: hidden;
+}
+
 .define-axes .left {
   grid-row: 2;
   grid-column: 1;
@@ -194,6 +240,20 @@ header a {
 .define-axes .right {
   grid-row: 2;
   grid-column: 2;
+}
+
+.define-axes .compass-center {
+  grid-column: 1 / span 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.define-axes .compass {
+  height: 50vw;
+  width: 50vw;
+  max-height: 30rem;
+  max-width: 30rem;
 }
 
 .define-axes label {

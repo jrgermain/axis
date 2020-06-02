@@ -12,9 +12,6 @@ function CreatePage() {
                     <Route path="/create/define-axes" component={DefineAxes}></Route>
                 </Switch>
             </div>
-            <div className="quiz-in-progress">
-                <Compass xScore="80" yScore="40" />
-            </div>
         </div>
     )
 }

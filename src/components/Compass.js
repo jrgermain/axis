@@ -1,14 +1,14 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import DefineAxes from './DefineAxes';
 
-function Compass({ animated, xlab, ylab, xScore, yScore }) {
+function Compass({ animated, leftAxisLabel, rightAxisLabel, topAxisLabel, bottomAxisLabel, xScore, yScore }) {
     return (
         <figure className={"compass" + (animated ? " animated" : "")}>
             <span className="x-axis"></span>
-            <label className="x-label">{xlab}</label>
+            <label className="label-left">{leftAxisLabel}</label>
+            <label className="label-right">{rightAxisLabel}</label>
             <span className="y-axis"></span>
-            <label className="y-label">{ylab}</label>
+            <label className="label-top">{topAxisLabel}</label>
+            <label className="label-bottom">{bottomAxisLabel}</label>
             <span className="point" style={{ top: yScore + "%", left: xScore + "%" }}></span>
         </figure>
     )
