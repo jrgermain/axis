@@ -22,22 +22,22 @@ class DefineAxes extends React.Component {
                 <div className="left">
                     <h3>X-axis</h3>
                     <div>
-                        <label for="left-axis-label">Left: </label>
+                        <label htmlFor="left-axis-label">Left: </label>
                         <input id="left-axis-label" type="txt" data-key="leftAxisLabel" onChange={this.handleChange}></input>
                     </div>
                     <div>
-                        <label for="right-axis-label">Right: </label>
+                        <label htmlFor="right-axis-label">Right: </label>
                         <input id="right-axis-label" type="txt" data-key="rightAxisLabel" onChange={this.handleChange}></input>
                     </div>
                 </div>
                 <div className="right">
                     <h3>Y-axis</h3>
                     <div>
-                        <label for="top-axis-label">Top: </label>
+                        <label htmlFor="top-axis-label">Top: </label>
                         <input id="top-axis-label" type="txt" data-key="topAxisLabel" onChange={this.handleChange}></input>
                     </div>
                     <div>
-                        <label for="bottom-axis-label">Bottom: </label>
+                        <label htmlFor="bottom-axis-label">Bottom: </label>
                         <input id="bottom-axis-label" type="txt" data-key="bottomAxisLabel" onChange={this.handleChange}></input>
                     </div>
                 </div>
@@ -48,8 +48,10 @@ class DefineAxes extends React.Component {
                 <span className="compass-center">
                     <Compass xScore="80" yScore="40" leftAxisLabel={this.state.leftAxisLabel} rightAxisLabel={this.state.rightAxisLabel} topAxisLabel={this.state.topAxisLabel} bottomAxisLabel={this.state.bottomAxisLabel} />
                 </span>
-                <div className="continue">
-                    <LinkButton url="/create/write-questions" label="Continue"></LinkButton>
+                <div className="actions">
+                    <span className="right">
+                        <LinkButton url="/create/write-questions" label="Continue"></LinkButton>
+                    </span>
                 </div>
             </div>
         )

@@ -5,10 +5,7 @@ import Compass from './Compass';
 class WriteQuestions extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            xlab: "",
-            ylab: ""
-        }
+        this.state = {}
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -16,10 +13,13 @@ class WriteQuestions extends React.Component {
         return (
             <div className="write-questions">
                 <div className="intro">
-                    <h2>Write questions</h2>
+                    <h2>Write Questions</h2>
                 </div>
-                <div className="continue">
-                    <LinkButton url="/create/step2" label="Continue"></LinkButton>
+                <div className="actions">
+                    <button className="stylish">Add Question</button>
+                    <span className="right">
+                        <LinkButton url="/create/step2" label="Continue"></LinkButton>
+                    </span>
                 </div>
             </div>
         )
