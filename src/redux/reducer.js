@@ -1,3 +1,5 @@
+import cloneDeep from 'clone-deep';
+
 const initialState = {
     test: {
         axes: {
@@ -16,7 +18,7 @@ const initialState = {
 
 function reducer(state = initialState, action) {
     if (action.type === "SET_AXIS_LABELS") {
-        const _state = {...state}
+        const _state = cloneDeep(state);
         _state.test.axes = action.content;
         return _state;
     }
