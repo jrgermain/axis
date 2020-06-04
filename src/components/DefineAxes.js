@@ -1,15 +1,15 @@
 import React from 'react';
 import LinkButton from './LinkButton';
 import Compass from './Compass';
+import { connect } from "react-redux";
 
 class DefineAxes extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            xlab: "",
-            ylab: ""
-        }
+        this.dispatch = props.dispatch;
+        this.state = {};
         this.handleChange = this.handleChange.bind(this);
+        this.storeLabels = this.storeLabels.bind(this);
     }
 
     render() {
@@ -50,7 +50,7 @@ class DefineAxes extends React.Component {
                 </span>
                 <div className="actions">
                     <span className="right">
-                        <LinkButton url="/create/write-questions" label="Continue"></LinkButton>
+                        <LinkButton url="/create/write-questions" label="Continue" beforeNavigate={this.storeLabels}></LinkButton>
                     </span>
                 </div>
             </div>
@@ -60,6 +60,19 @@ class DefineAxes extends React.Component {
     handleChange(event) {
         this.setState({ [event.target.getAttribute("data-key")]: event.target.value });
     }
+
+    storeLabels() { 
+        this.dispatch({
+            type: "SET_AXIS_LABELS",
+            content: {
+                left: this.state.leftAxisLabel,
+                right: this.state.rightAxisLabel,
+                top: this.state.topAxisLabel,
+                bottom: this.state.bottomAxisLabel
+            }
+        });
+
+    }
 }
 
-export default DefineAxes
+export default connect()(DefineAxes)

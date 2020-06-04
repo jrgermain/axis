@@ -1,6 +1,7 @@
 import React from 'react';
 import LinkButton from './LinkButton';
 import Compass from './Compass';
+import { connect } from "react-redux";
 
 class WriteQuestions extends React.Component {
     constructor(props) {
@@ -30,4 +31,4 @@ class WriteQuestions extends React.Component {
     }
 }
 
-export default WriteQuestions
+export default connect()(WriteQuestions)
